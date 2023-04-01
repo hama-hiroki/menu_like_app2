@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+  <p>
+  <strong>Name:</strong>
+  <%= @menu.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @menu.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @menu.image_url.present? %>
+    <%= image_tag @menu.image_url %>
+  <% else %>
+    No image available.
+  <% end %>
+</p>
+
+<% if user_signed_in? %>
+  <% if current_user.likes.find_by(menu_id: @menu.id) %>
+    <%= link_to 'Unlike', menu_like_path(@menu, current_user.likes.find_by(menu_id: @menu.id)), method: :delete %>
+  <% else %>
+    <%= link_to 'Like', menu_likes_path(@menu), method: :post %>
+  <% end %>
+<% end %>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @menu.likes.count %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
