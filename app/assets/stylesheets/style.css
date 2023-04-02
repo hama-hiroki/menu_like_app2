@@ -1,20 +1,17 @@
 
 
 
-/* PC用のスタイル */
-@media screen and (min-width: 481px) {
-  
-  .menu-container {
-  align-items: flex-start;
+/* PC版のスタイル */
+.menu-container {
   display: flex;
   flex-direction: column;
-  padding-left: 200px;
+  align-items: center;
   margin-top: 40px;
   background-color: #8B4513; /* 茶色の背景色 */
 }
 
 .menu-heading {
-  font-size: 60px;
+  font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
   font-family: 'Pacifico', cursive; /* Pacificoフォントの使用 */
@@ -22,211 +19,169 @@
 }
 
 .menu-item-heading {
-  font-size: 40px;
   font-family: 'Pacifico', cursive; /* Pacificoフォントの使用 */
   color: white; /* 白色の文字色 */
   position: relative; /* 相対位置指定 */
   display: inline-block; /* インラインブロック要素に変更 */
 }
 
+.menu-item-heading:after {
+  content: "「"; /* 「」を表示する */
+  font-size: 36px;
+  position: absolute;
+  top: 0;
+  right: -20px; /* 右に20pxの余白を作る */
+}
+
 .menu-item {
-  font-size: 20px;
+  flex-basis: 30%;
   color: white; /* 白色の文字色 */
   font-family: 'Pacifico', cursive; /* Pacificoフォントの使用 */
 }
 
 .menu-item-list {
-
-  font-size: 20px;
   margin-left: 0; /* デフォルトのリストスタイルを削除 */
   list-style-type: none; /* リストスタイルを削除 */
   padding-left: 0; /* 左余白を削除 */
 }
 
-.admin-link {
+.menu-item-button {
   background-color: white;
   color: #8B4513; /* 茶色の文字色 */
-  padding: 5px;
-  margin-bottom: 10px;
-  margin-top: 60px;
-  margin-left: 900px;
+  padding: 10px 20px;
   text-decoration: none;
   border: none;
 }
 
-.like-btn {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
+.admin-link {
+  background-color: white;
+  color: #8B4513; /* 茶色の文字色 */
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
 }
 
-img {
-  border-radius: 50%;
-}
-
-.menu-item-header {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  
-}
-
-/* application.css */
-.login-container, .registration-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  background-color: #8B4513;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px #999;
-}
-
-.login-container {
-  width: 500px;
-}
-
-.registration-container {
-  width: 600px;
-}
-
-.login-heading, .registration-heading {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 40px;
-  font-family: 'Pacifico', cursive;
-  color: white;
-}
-
-.form-input {
-  margin: 10px 0;
-  width: 100%;
-}
-
-.form-submit {
-  margin-top: 20px;
+.logout-button {
+  display: inline-block;
   background-color: white;
   color: #8B4513;
   padding: 10px 20px;
   text-decoration: none;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-top: 20px;
 }
 
-.form-submit:hover {
-  background-color: #8B4513;
-  color: white;
-}
-
-}
-
-/* レスポンシブデザイン用のCSS */
-
-/* 600px以下の画面サイズになった時 */
-@media screen and (max-width: 600px) {
-  /* ヘッダー部分の調整 */
-  .header {
-    display: flex;
-    justify-content: center;
-  }
-
-  .menu-logo {
-    font-size: 28px;
-    margin-right: 5px;
-  }
-
-  .menu-title {
-    display: none;
-  }
-
-  /* メニューコンテナーの調整 */
+/* スマートフォン版のスタイル */
+@media screen and (max-width: 428px) { /* iPhone14の画面サイズに合わせています */
   .menu-container {
     margin-top: 20px;
   }
-
-  /* ジャンル名の調整 */
+  
+  .menu-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
   .menu-item-heading {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 24px;
     margin-bottom: 10px;
+    position: static;
   }
-
+  
   .menu-item-heading:after {
-    font-size: 28px;
+    display: none;
   }
+  
+.menu-item {
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-  /* メニューアイテムの調整 */
-  .menu-item {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+/* メニューアイテムの画像 */
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-  /* いいねボタンの調整 */
-  .like-btn {
-    width: 30px;
-    height: 30px;
-  }
+/* メニューアイテムの情報 */
+.menu-item-info {
+  padding: 20px;
+}
 
-  /* ログインページの調整 */
-  .registration-container {
-    margin-top: 20px;
-  }
+/* メニューアイテムのタイトル */
+.menu-item-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  .container {
-    width: 80%;
-  }
+/* メニューアイテムの説明 */
+.menu-item-description {
+  margin-bottom: 20px;
+}
 
-  h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
+/* いいねボタン */
+.like-btn {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 
-  label {
-    font-size: 16px;
-  }
+/* いいね数 */
+.likes-count {
+  font-size: 16px;
+  margin-right: 10px;
+}
 
-  input[type="text"],
-  input[type="password"],
-  input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+/* ログアウトボタン */
+.logout-button {
+  padding: 10px;
+  margin-top: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+}
 
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #8B4513;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+/* フォーム */
+.form-group {
+  margin-bottom: 20px;
+}
 
-  /* 新規登録ページの調整 */
-  .new-registration-container {
-    margin-top: 20px;
-  }
+.form-label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 
-  .new-container {
-    width: 80%;
-  }
+.form-control {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-  /* メッセージの調整 */
-  .alert {
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    text-align: center;
-  }
+/* フォームのボタン */
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8B4513;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* バリデーションエラー */
+.field_with_errors input,
+.field_with_errors select,
+.field_with_errors textarea {
+  border-color: red;
+}
+
 }
