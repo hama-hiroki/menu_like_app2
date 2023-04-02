@@ -116,3 +116,110 @@ img {
   background-color: #8B4513;
   color: white;
 }
+
+/* レスポンシブデザイン用のCSS */
+
+/* 600px以下の画面サイズになった時 */
+@media screen and (max-width: 600px) {
+  /* ヘッダー部分の調整 */
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-logo {
+    font-size: 28px;
+    margin-right: 5px;
+  }
+
+  .menu-title {
+    display: none;
+  }
+
+  /* メニューコンテナーの調整 */
+  .menu-container {
+    margin-top: 20px;
+  }
+
+  /* ジャンル名の調整 */
+  .menu-item-heading {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .menu-item-heading:after {
+    font-size: 28px;
+  }
+
+  /* メニューアイテムの調整 */
+  .menu-item {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* いいねボタンの調整 */
+  .like-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* ログインページの調整 */
+  .registration-container {
+    margin-top: 20px;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* 新規登録ページの調整 */
+  .new-registration-container {
+    margin-top: 20px;
+  }
+
+  .new-container {
+    width: 80%;
+  }
+
+  /* メッセージの調整 */
+  .alert {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+  }
+}
