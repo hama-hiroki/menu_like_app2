@@ -1,5 +1,10 @@
 
-.menu-container {
+
+
+/* PC用のスタイル */
+@media screen and (min-width: 481px) {
+  
+  .menu-container {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -115,6 +120,8 @@ img {
 .form-submit:hover {
   background-color: #8B4513;
   color: white;
+}
+
 }
 
 /* レスポンシブデザイン用のCSS */
